@@ -28,6 +28,10 @@ header {
   vertical-align: middle;
 }
 
+article ul {
+  list-style: none;
+}
+
 .navigation {
   float: right;
   text-align: right;
@@ -40,6 +44,7 @@ nav > ul > li {
 }
 
 header a {
+  color: #2C3E50;
   text-decoration: none;
 }
 
