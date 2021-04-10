@@ -1,26 +1,140 @@
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
+	background-color: #f4f4f4;
 }
 
-header {
-  height: 50px;
-  background-color: #82E0AA;
-  color: #2C3E50;
-  position: relative;
+p {
+	font-size: 15px;
 }
 
-.logo {
-  float: left;
+cite {
+	font-size: 10px;
+}
+
+aside span {
+	font-size: 12px;
 }
 
 header img {
-  height: 50px;
+  height: 40px;
 }
 
-.logo > h1 {
-  display: inline-block;
+header a {
+  color: #000;
+}
+
+/* header */
+
+.header {
+  background-color: #82E0AA;
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
+.header ul {
   margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #82E0AA;
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  border-right: 1px solid #f4f4f4;
+  text-decoration: none;
+	font-weight: 500;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: #f4f4f4;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+	float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+	overflow: auto;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
 }
 
 .logo > * {
@@ -32,33 +146,30 @@ article ul {
   text-align: left;
 }
 
-header a {
-  color: #2C3E50;
-  text-decoration: none;
-}
-
-header a:hover {
-  color: yellow;
-}
-
 .container {
-    display: flex;
-    width: 1080px;
-    height: auto;
-    margin: 10px auto;
+	padding-top: 80px;
+	padding-right: 10px;
+	margin: auto;
+	width: 1080px;
+	height: auto;
+	background-color: white;
 }
 
-.left-content {
-    display: flex;
-    text-align: center;
-    width: 60%;
-    height: 100%;
+.flex-column {
+	display: flex;
+	flex-direction: column;
 }
 
-.right-content {
-    text-align: center;
-    width: 40%;
-    height: 100%;
+.flex-row {
+	display: flex;
+	flex-direction: row;
+}
+
+.content {
+	margin-left: 50px;
+	margin-bottom: 20px;
+	text-align: center;
+	height: 100%;
 }
 
 footer {
@@ -69,118 +180,63 @@ footer {
   padding-top: 10px;
 }
 
+/* slideshow styles */
+.slideshow {  
+	width: 350px;  
+	margin: 3em auto;
+	overflow: hidden;
+	border: 3px solid #f2f2f2;
+}  
+.slideshow ul {  
+	width: 400%; 
+	padding:0; margin:0;
+	list-style:none;
+}  
+.slideshow li { float: left; }
 
-/*Strip the ul of padding and list styling*/
-ul {
-	list-style-type:none;
-	margin:0;
-	padding:0;
-	position: absolute;
-}
+/* 48em = 768px */
 
-/*Create a horizontal list with spacing*/
-li {
-	display:inline-block;
-	/* float: left; */
-	margin-right: 1px;
-}
-
-/*Style for menu links*/
-li a {
-	display:block;
-	min-width:140px;
-	height: 50px;
-	text-align: center;
-	line-height: 50px;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color: #fff;
-	background: #19c589;
-	text-decoration: none;
-}
-
-/*Hover state for top level links*/
-li:hover a {
-	background: #2f3036;
-}
-
-/*Style for dropdown links*/
-li:hover ul a {
-	background: #f3f3f3;
-	color: #2f3036;
-	height: 40px;
-	line-height: 40px;
-}
-
-/*Hover state for dropdown links*/
-li:hover ul a:hover {
-	background: #19c589;
-	color: #fff;
-}
-
-/*Hide dropdown links until they are needed*/
-li ul {
-	display: none;
-}
-
-/*Make dropdown links vertical*/
-li ul li {
-	display: block;
-	float: none;
-}
-
-/*Prevent text wrapping*/
-li ul li a {
-	width: auto;
-	min-width: 100px;
-	padding: 0 20px;
-}
-
-/*Display the dropdown on hover*/
-ul li a:hover + .hidden, .hidden:hover {
-	display: block;
-}
-
-/*Style 'show menu' label button and hide it by default*/
-.show-menu {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	text-decoration: none;
-	color: #fff;
-	background: #19c589;
-	text-align: center;
-	padding: 10px 0;
-	display: none;
-}
-
-/*Hide checkbox*/
-input[type=checkbox]{
-    display: none;
-    -webkit-appearance: none;
-}
-
-/*Show menu when invisible checkbox is checked*/
-input[type=checkbox]:checked ~ #menu{
-    display: block;
-}
-
-
-/*Responsive Styles*/
-
-@media screen and (max-width : 760px){
-	/*Make dropdown links appear inline*/
-	ul {
-		position: static;
-		display: none;
-	}
-	/*Create vertical spacing*/
-	li {
-		margin-bottom: 1px;
-	}
-	/*Make all menu links full width*/
-	ul li, li a {
+@media (max-width: 768px)  {
+	.container {
 		width: 100%;
+		margin-left: 0px;
 	}
-	/*Display 'show menu' link*/
-	.show-menu {
-		display:block;
+
+	.content{
+		width: 100%;
+		margin-left: 20px;
 	}
+
+	.content > * {
+		padding-right: 50px;
+	}
+
+	.flex-row {
+		flex-direction: column;
+	}
+
+	img {
+		max-width: 350px;
+	}
+
+	.slideshow{
+		width: 350px; 
+	}
+}
+
+@media (min-width: 1105px) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
 }

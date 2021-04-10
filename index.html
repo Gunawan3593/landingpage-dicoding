@@ -10,11 +10,6 @@
   <link href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" rel="stylesheet">
   <link rel = "stylesheet" href="./assets/css/style.css">
   <style>
-    .fcol-1 {
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
     h1, h4 {
       text-align: left;
     }
@@ -39,53 +34,41 @@
     }
 
     tr:nth-child(even) {background-color: #f2f2f2;}
-    
+
+    #table-wrapper {
+      position:relative;
+    }
+
+    #table-scroll {
+      overflow:auto;  
+      margin-top:20px;
+    }
+
   </style>
 </head>
 <body>
-  <header>
-    <label for="show-menu" class="show-menu">Show Menu</label>
-	  <input type="checkbox" id="show-menu" role="button">
-    <ul id="menu">
-      <li><a href="#">Home</a></li>
-      <li>
-          <a href="#">About ￬</a>
-          <ul class="hidden">
-              <li><a href="#">Who We Are</a></li>
-              <li><a href="#">What We Do</a></li>
-          </ul>
-      </li>
-      <li>
-          <a href="#">Portfolio ￬</a>
-          <ul class="hidden">
-              <li><a href="#">Photography</a></li>
-              <li><a href="#">Web & User Interface Design</a></li>
-              <li><a href="#">Illustration</a></li>
-          </ul>
-      </li>
-      <li><a href="#">News</a></li>
-      <li><a href="#">Contact</a></li>
-  </ul>
-    <!-- <div class="logo">
+  <header class="header">
+    <a href="" class="logo">
       <img src="./assets/img/logo_right.png" title="Buah Naga Logo" alt="Logo">
-      <h1>Buah Naga</h1>
+      Buah Naga
       <img src="./assets/img/logo_left.png" title="Buah Naga Logo" alt="Logo">
-    </div>
-    <div class="navigation" id="myNavigation">
-        <a href="#pendahuluan">Pendahuluan</a>
-        <a href="#morfologi">Morfologi</a>
-        <a href="#jenis">Jenis</a>
-        <a href="#manfaat">Manfaat</a>
-        <a href="#kandungan">Kandungan</a>
-        <a href="#tentang">Tentang Saya</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-        </a>
-    </div> -->
+    </a>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+      <li><a href="#pendahuluan">Pendahuluan</a></li>
+      <li><a href="#morfologi">Morfologi</a></li>
+      <li><a href="#jenis">Jenis</a></li>
+      <li><a href="#manfaat">Manfaat</a></li>
+      <li><a href="#kandungan">Kandungan</a></li>
+      <li><a href="#tentang">Tentang Saya</a></li>
+    </ul>
   </header>
   <main>
     <div class="container">
-      <div class="left-content fcol-1">
+      <div class="flex-column">
+      <div class="flex-row">
+      <div class="content">
         <article id="pendahuluan">
           <img src="./assets/img/material/051033400_1509172164-Buah-Naga-Beda-Warna-Beda-Manfaat.jpg" title="Gambar Buah Naga" alt="Gambar buah naga">
           <h1>Apa itu buah naga ?</h1>
@@ -107,7 +90,7 @@
             <cite>Dari Wikipedia bahasa Indonesia, ensiklopedia bebas <a href="https://id.wikipedia.org/">wikipedia.com</a></cite>
           </article>
         <article id="morfologi">
-          <h1>Morfologi</h1>
+          <h1>Bagaimana Morfologi dari buah naga ?</h1>
           <img src="./assets/img/material/bunga buah naga.jpg" title="Bunga Buah Naga" alt="Bunga buah naga">
           <p>Morfologi tanaman buah naga terdiri dari akar, batang, duri, 
             bunga, dan buah. Akar buah naga hanyalah akar serabut yang 
@@ -141,10 +124,18 @@
           <p>Nama buah naga merujuk pada buah-buah yang dapat dimakan dari tumbuhan jenis:</p>
           <ul>
             <li><strong><i>Hylocereus undatus</i></strong>, yang buahnya berwarna merah dengan daging buah putih.</li>
-            <li><strong><i>polyrhizus</i></strong>, yang buahnya berwarna merah muda dengan daging buah merah.</li>
+            <li><strong><i>Polyrhizus</i></strong>, yang buahnya berwarna merah muda dengan daging buah merah.</li>
             <li><strong><i>Selenicereus megalanthus</i></strong> dengan kulit buah kuning dan daging buah putih.</li>
-            <li><strong><i>costaricensis</i></strong>, buah naga dengan warna buah yang sangat merah.</li>
+            <li><strong><i>Costaricensis</i></strong>, buah naga dengan warna buah yang sangat merah.</li>
           </ul>
+          <div class="slideshow slideshow2">  
+              <ul>
+                <li><img src="https://produits.bienmanger.com/38126-0w470h470_Red_Dragon_Fruit.jpg" alt="Hylocereus undatus" width="350" /></li>
+                <li><img src="https://images-na.ssl-images-amazon.com/images/I/81QPJLV1-5L._AC_SL1500_.jpg" alt="Polyrhizus" width="350" /></li>
+                <li><img src="https://pictures.attention-ngn.com/1/30/44281/1200930907.09_6_o.jpg" alt="Selenicereus megalanthus" width="350" /></li>
+                <li><img src="https://lh3.googleusercontent.com/proxy/4uSq2zZz1QeDx5T7yzWuTHTgj3T_cdfo0KpevblU6dHOzFj_a7eNGDY-kp9f9j9a9TwjmrwS8lV0PftdI10FSaj_uzWYs3wgpuwnWKPx8MssfTOLQ0RrORoJpFL9P1SACZ2zi6mSK88" alt="Costaricensis" width="350" /></li>
+              </ul>  
+          </div>
         </article>
         <article id="manfaat">
           <h1>Apa manfaat buah naga bagi kesehatan ?</h1>
@@ -226,6 +217,8 @@
           <p>Manfaat dari buah naga merah tentu tidak terlepas dari kandungan nutrisi di dalamnya. 
             Ada banyak vitamin dan mineral yang terkandung dalam buah berbentuk unik yang satu ini, yaitu:
           </p>
+          <div id="table-wrapper">
+          <div id="table-scroll">
           <table>
             <tr>
               <th>Gizi</th>
@@ -303,10 +296,12 @@
               <td class="text-center">&nbsp;-</td>
               </tr>
           </table>
+        </div>
+        </div>
           <cite>Dari website kesehatan <a href="https://www.honestdocs.id/">honestdocs.id</a></cite>
         </article>
       </div>
-      <div class="right-content fcol-1">
+      <div class="content">
         <aside id="tentang">
           <img width="200" src="./assets/img/my photo.jpg" title="Ini Photo Saya Boy Keren Kan ?" alt="photo saya">
           <table>
@@ -339,7 +334,7 @@
                 <span class="mdi mdi-email"> Email</span>
               </td>
               <td>
-                <a href="mailto:broken.wayan@gmail.com">broken.wayan@gmail.com</a>
+                <span><a href="mailto:broken.wayan@gmail.com">broken.wayan@gmail.com</a></span>
               </td>
             </tr>
             <tr>
@@ -347,7 +342,7 @@
                 <span class="mdi mdi-school"> Pendidikan</span>
               </td>
               <td>
-                <span>DIII Manajemen Informatika</span>
+                <span><strong>D3</strong> Manajemen Informatika</span>
               </td>
             </tr>
             <tr>
@@ -361,12 +356,14 @@
           </table>
         </aside>
       </div>
+      </div>
+      </div>
     </div>
   </main>
   <footer>
     &copy; 2021, Adi Gunawan
   </footer>
-  <script>
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="./assets/js/slider.js"></script>
 </body>
 </html>
